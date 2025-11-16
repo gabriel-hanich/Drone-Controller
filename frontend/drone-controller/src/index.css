@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+
+  background: #678ca5;
+  margin: none;
+  border: none;
+}
+
+h1,h2,h3,h4,h5,h6,p,li,ul,a{
+  color: #f5f5f5;
+}
+
+h1{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.instrument-cluster{
+  display: grid;
+  width: 98%;
+  height: calc(100vh - 50px);
+  grid-template-columns: 1fr 1.5fr 2fr 2fr;
+  grid-template-rows: 0.5fr 1fr 1fr;
+
+  grid-template-areas:
+    "a a b c"
+    "d e e g"
+    "f e e g";
+
+}
+
+.instrument-container{
+  overflow:hidden;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.container{
+  background: #2a3c51;
+}
+
+.rounded{
+  border-radius: 10px;
+}
+
+.emphasis{
+  color: #1985A1;
+}
+
+.warning{
+  color: #e22626;
+}
+
+.grid-elem{
+  height: 100%;
+  width: 100%;
+  margin: 5px;
+}
+
+#stopstartcont{
+  grid-area: a;
+}
+
+#horizoncont{
+  grid-area: f;
+}
+
+#velocitycont{
+  grid-area: d;
+}
+
+#primarycont{
+  grid-area: e;
+}
+
+#consolecont{
+  grid-area: g;
+}

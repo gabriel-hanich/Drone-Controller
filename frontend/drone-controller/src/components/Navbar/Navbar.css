@@ -1,0 +1,15 @@
+.logo{
+    height: 40px;
+}
+
+.navbar-container{
+    margin: 0px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 40px;
+}

@@ -1,0 +1,55 @@
+.instrument-container{
+    position: relative;
+}
+
+.dot{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 3;
+    border: 5px solid #2a3c51;
+}
+
+.arrow{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    height: 10px;
+    width: 10px;
+}
+
+
+
+.arrow-head{
+    position: absolute;
+    background-color: #2a3c51;
+    
+}
+
+#arrow-head-horizontal{
+    top: 0%;
+    right: 0%;
+    transform: translate(0%, -25%);
+
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid white;
+
+}
+
+#arrow-head-vertical{
+    bottom: 0%;
+    right: 0%;
+    transform: translate(25%, 0%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid white;
+}
+

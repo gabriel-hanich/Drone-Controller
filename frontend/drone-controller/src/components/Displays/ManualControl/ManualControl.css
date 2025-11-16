@@ -1,0 +1,117 @@
+.wrapper{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+}
+
+
+.control-container{
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "a b c"
+                         "d e f"
+                         "g h i";
+            
+}
+
+#setcontup{
+    grid-area: b;
+}
+#setcontleft{
+    grid-area: d;
+}
+#setcontright{
+    grid-area: f;
+}
+#setcontdown{
+    grid-area: h
+}
+#setconthover{
+    grid-area: e
+}
+
+.set-container{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.set-img{
+    width: 100%;
+    cursor: pointer;
+}
+
+#set-right{
+    transform: rotate(90deg);
+}
+#set-left{
+    transform: rotate(-90deg);
+}
+#set-down{
+    transform: rotate(180deg);
+}
+
+.set-elem{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    p{
+        color: black;
+    }
+}
+
+.elevation-container{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.elevation-text{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.elevation-text-clickable{
+    cursor: pointer;
+    border: 1px white solid;
+}
+
+.elevation-bar{
+    width: 100%;
+    height: 85%;
+    border: 2px white solid;
+    position: relative;
+}
+
+.elevation-indicator{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 85%;
+    left: 0%;
+
+}
+
+
+.elevation-indicator-moveable{
+    cursor:row-resize;
+}
+

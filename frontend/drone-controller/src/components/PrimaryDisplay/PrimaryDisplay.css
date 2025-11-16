@@ -1,0 +1,48 @@
+.primary-container{
+    margin: 5px;
+    height: 94%;
+
+}
+
+.screenbar{
+    width: 90%;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px white solid;
+}
+
+
+.screenbar-option{
+    height: 35px;
+    padding: 5px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px white solid;
+    border-right: 1px white solid;
+}
+
+.screenbar-option:hover{
+    background-color: #1985A1;
+    cursor: pointer;
+}
+
+.active-option{
+    background-color: #1985A1
+}
+
+.active-option:hover{
+    cursor: default !important;
+}
+
+.screen-container{
+    width: 100%;
+    height: auto;
+    height: 100%;
+    margin-top: 20px;
+}
