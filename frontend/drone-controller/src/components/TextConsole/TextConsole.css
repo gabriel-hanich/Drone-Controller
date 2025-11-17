@@ -28,13 +28,9 @@
 .input-container{
     width: 85%;
     margin: auto;
+    margin-top: 22px;
 }
 
 .console-input{
     width: 100%;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    font-size: 1rem;
-    padding: 5px;
 }

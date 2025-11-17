@@ -1,21 +1,11 @@
 import { FormEvent, useState } from "react";
 import "./TextConsole.css"
+import { useConnection } from "../../services/DroneConnection";
 
 const TextConsole:React.FC = ()=>{
-    const [pastCommands, setPastCommands] = useState<String[]>([]);
+    const pastCommands = useConnection().pastCommands;
 
     function addNewCommand(inputVal: React.KeyboardEvent<HTMLInputElement>){
-        if(inputVal.key == "Enter"){
-            const value = inputVal.currentTarget.value.trim();
-            if (!value) return;
-
-            inputVal.currentTarget.value = "";
-
-            
-            setPastCommands(pastCommands => [...pastCommands, value]);
-
-
-        }
     }
 
 

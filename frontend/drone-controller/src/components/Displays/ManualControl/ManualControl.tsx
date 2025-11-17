@@ -1,15 +1,16 @@
 import "./ManualControl.css"
 import triangle from "../../../assets/triangle.svg"
 import { useState } from "react"
+import { useConnection } from "../../../services/DroneConnection";
 
 const ManualControl:React.FC = ()=>{
     const maxHeight = 10; // The maximum height that can be read by the drone (m)
 
-    const [elevation, setElevation] = useState(10);
-    const [elevationSetPoint, setElevationSetPoint] = useState(10);
+    let elevation: number = useConnection().droneInfo.elevation;
+    let elevationSetPoint: number = useConnection().droneInfo.elevationSetPoint;
     
     function incrementElevationSetPoint(amount:number){
-        setElevationSetPoint(elevationSetPoint + amount);
+        // setElevationSetPoint(elevationSetPoint + amount);
     }
 
     return(
@@ -40,7 +41,7 @@ const ManualControl:React.FC = ()=>{
                         <p className="elevation-text">{maxHeight}m</p>
                         <div className="elevation-bar">
                             <div className="elevation-indicator" style={{top: `${100 - elevation/maxHeight * 100}%`}}>
-                                <p className="elevation-text">{elevation}m</p>
+                                <p className="elevation-text">{Math.round(elevation * 100) / 100}m</p>
                             </div>
                         </div>
                         <p className="elevation-text" >0m</p>
@@ -50,7 +51,7 @@ const ManualControl:React.FC = ()=>{
                         <p className="elevation-text elevation-text-clickable" onClick={() => incrementElevationSetPoint(0.5)}>+</p>
                         <div className="elevation-bar">
                             <div className="elevation-indicator" style={{top: `${100 - elevationSetPoint/maxHeight * 100}%`}}>
-                                <p className="elevation-text">{elevationSetPoint}m</p>
+                                <p className="elevation-text">{Math.round(elevationSetPoint * 100) / 100}m</p>
                             </div>
                         </div>
                         <p className="elevation-text elevation-text-clickable" onClick={() => incrementElevationSetPoint(-0.5)}>-</p>

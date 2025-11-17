@@ -1,14 +1,15 @@
-import { Console } from "console";
 import ArtificialHorizon from "../components/ArtificialHorizon/ArtificialHorizon";
 import Navbar from "../components/Navbar/Navbar";
 import PrimaryDisplay from "../components/PrimaryDisplay/PrimaryDisplay";
 import StopStart from "../components/StopStart/StopStart";
 import VelocityBars from "../components/VelocityBars/VelocityBars";
-import { useCounter } from "../services/DroneConnection";
+import { useConnection } from "../services/DroneConnection";
 import TextConsole from "../components/TextConsole/TextConsole";
+import ConnectionManager from "../components/ConnectionManager/ConnectionManager";
 
 const Dashboard:React.FC = ()=>{
-    
+    let backendURL: String = useConnection().backendURL;
+
     return(
         <>
             <Navbar></Navbar>
@@ -27,6 +28,9 @@ const Dashboard:React.FC = ()=>{
                 </div>
                 <div className="grid-elem" id="consolecont">
                     <TextConsole></TextConsole>
+                </div>
+                <div className="grid-elem" id="connectioncont">
+                    <ConnectionManager></ConnectionManager>
                 </div>
             </div>
         </>

@@ -1,0 +1,63 @@
+.connection-container{
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    margin-left: 5px;
+}
+
+.status-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: left;
+}
+
+.connection-status{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+.status-active{
+    background-color: #04A777;
+}
+
+.status-inactive{
+    background-color: #D63230;
+    animation: pulseScale 2s linear infinite;
+}
+
+.settings-elem{
+    margin: 0px;
+    margin-top: 3px;
+}
+
+.settings-button{
+    margin: auto;
+    background-color: #1985A1;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.settings-button:hover{
+    margin: auto;
+    background-color: #1985A1;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+@keyframes pulseScale {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1)
+    }
+}

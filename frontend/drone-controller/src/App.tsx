@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
-import { CounterProvider } from './services/DroneConnection';
+import { ConnectionProvider } from './services/DroneConnection';
 
 function App() {
   
   
   return (
-    <CounterProvider>
+    <ConnectionProvider>
       <Routes>
           <Route path='/' element={<Dashboard></Dashboard>}></Route>
       </Routes>
-    </CounterProvider>
+    </ConnectionProvider>
   );
 }
 

@@ -6,22 +6,25 @@
  * as text. Used when developing the associated web app. 
  * */ 
 import { json } from "stream/consumers";
-import { DroneData, generateRandomDroneData } from "./types"
+import { DroneConnection, DroneData, generateRandomDroneConnection, generateRandomDroneData } from "./types"
+var cors = require('cors')
 
 
 
 // Initalise the web server
 const express = require('express');
 const app = express();
-const port: number = 3000;
 
-var outputdata:DroneData = generateRandomDroneData();
+const port: number = 8080;
+
+var outputdata:DroneConnection = generateRandomDroneConnection();
 
 setInterval(()=>{
-    outputdata = generateRandomDroneData();
+    outputdata = generateRandomDroneConnection();
 }, 1000)
 
 app.get("/", (req, res)=>{
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.send(JSON.stringify(outputdata));
 });
 

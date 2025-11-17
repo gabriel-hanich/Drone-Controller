@@ -1,24 +1,21 @@
 import { useState } from "react";
 import "./StopStart.css"
+import { useConnection } from "../../services/DroneConnection";
 
 const StopStart:React.FC = ()=>{
-    const [isStopped, setIsStopped] = useState(true);
-    const [isArmed, setIsArmed] = useState(false);
+    let isStopped = useConnection().droneInfo.isEStopped;
+    let isArmed = useConnection().droneInfo.isArmed;
 
     function emergencyStop(){
-        setIsStopped(true);
     }
 
     function restart(){
-        setIsStopped(false);
     }
 
     function armDrone(){
-        setIsArmed(true)
     }
 
     function disarmDrone(){
-        setIsArmed(false);
     }
 
     return(

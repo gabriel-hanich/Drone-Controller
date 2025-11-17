@@ -1,10 +1,11 @@
 import { transform } from "typescript";
 import "./ArtificialHorizon.css"
 import { useState } from "react";
+import { useConnection } from "../../services/DroneConnection";
 
 const ArtificialHorizon:React.FC = ()=>{
-    const [roll, setRoll] = useState(10);
-    const [pitch, setPitch] = useState(20);
+    let roll = useConnection().droneInfo.roll;
+    let pitch = useConnection().droneInfo.pitch;
 
 
     return(

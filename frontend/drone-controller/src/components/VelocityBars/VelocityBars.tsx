@@ -1,10 +1,14 @@
 import { useState } from "react";
 import "./VelocityBars.css"
+import { useConnection } from "../../services/DroneConnection";
 
 
 const VelocityBars:React.FC = ()=>{
-    const [xVel, setXVel] = useState(45);
-    const [yVel, setYVel] = useState(-60);
+    const scaling = 30;
+
+    let xVel = useConnection().droneInfo.xVel * scaling;
+    let yVel = useConnection().droneInfo.yVel * scaling;
+
 
     return(
         <>
